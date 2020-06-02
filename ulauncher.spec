@@ -1,37 +1,37 @@
 Name:           ulauncher
 Version:        5.7.5
-Release:        2%{?dist}
+Release:        1
 Summary:        Linux Application Launcher
 BuildArch:      noarch
 
 License:        GPLv3+
 URL:            https://github.com/Ulauncher/Ulauncher
-Source0:        %{url}/releases/download/%{version}/%{name}_%{version}.tar.gz
+Source0:        https://github.com/Ulauncher/Ulauncher/releases/download/%{version}/%{name}_%{version}.tar.gz
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
-BuildRequires:  keybinder3-devel
-BuildRequires:  python3-dbus
-BuildRequires:  python3-devel
-BuildRequires:  python3-distutils-extra
-BuildRequires:  python3-gobject-devel >= 3.30
-BuildRequires:  python3-inotify
-BuildRequires:  python3-Levenshtein
-BuildRequires:  python3-pyxdg
-BuildRequires:  python3-websocket-client
+BuildRequires:  pkgconfig(keybinder-3.0)
+BuildRequires:  python-dbus
+BuildRequires:  python-devel
+BuildRequires:  python-distutils-extra
+BuildRequires:  python-gobject-devel >= 3.30
+BuildRequires:  python-inotify
+BuildRequires:  python3dist(python-levenshtein)
+BuildRequires:  python-pyxdg
+BuildRequires:  python-websocket-client
 BuildRequires:  python3dist(requests)
 BuildRequires:  pkgconfig(gtk+-3.0)
 
 Requires:       hicolor-icon-theme
-Requires:       keybinder3
+Requires:       keybinder3.0
 Requires:       webkitgtk4
-Requires:       python3-cairo
-Requires:       python3-dbus
-Requires:       python3-gobject
-Requires:       python3-inotify
-Requires:       python3-Levenshtein
-Requires:       python3-pyxdg
-Requires:       python3-websocket-client
+Requires:       python-cairo
+Requires:       python-dbus
+Requires:       python-gobject
+Requires:       python-inotify
+Requires:       python-Levenshtein
+Requires:       python-pyxdg
+Requires:       python-websocket-client
 
 Recommends:     libappindicator-gtk3
 
@@ -39,15 +39,12 @@ Recommends:     libappindicator-gtk3
 Ulauncher is a fast application launcher for Linux. It's is written in Python,
 using GTK+.
 
-
 %prep
 %autosetup -n %{name} -p1
 sed -i "s|version='%%VERSION%'|version='%{version}'|g" setup.py
 
-
 %build
-%py3_build
-
+%py_build
 
 %install
 
@@ -55,7 +52,7 @@ sed -i "s|version='%%VERSION%'|version='%{version}'|g" setup.py
 install -m 0644 -Dp build/share/applications/ulauncher.desktop \
     %{buildroot}%{_datadir}/applications/%{name}.desktop
 
-%py3_install
+%py_install
 
 
 %check
@@ -81,5 +78,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}-indicator.svg
 %{_datadir}/icons/hicolor/*/apps/%{name}.svg
 %{_datadir}/icons/ubuntu-mono-*/scalable/apps/%{name}-indicator.svg
-%{python3_sitelib}/%{name}-*-py*.egg-info
-%{python3_sitelib}/%{name}/
+%{python_sitelib}/%{name}-*-py*.egg-info
+%{python_sitelib}/%{name}/
