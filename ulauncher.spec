@@ -11,14 +11,14 @@ Source0:        https://github.com/Ulauncher/Ulauncher/releases/download/%{versi
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
 BuildRequires:  pkgconfig(keybinder-3.0)
-BuildRequires:  python-dbus
-BuildRequires:  python-devel
-BuildRequires:  python-distutils-extra
-BuildRequires:  python-gobject-devel >= 3.30
-BuildRequires:  python-inotify
+BuildRequires:  pkgconfig(dbus-python)
+BuildRequires:  pkgconfig(python)
+#BuildRequires:  python3dist(python-distutils-extra)
+BuildRequires:  pkgconfig(pygobject-3.0)
+BuildRequires:  python3dist(pyinotify)
 BuildRequires:  python3dist(python-levenshtein)
-BuildRequires:  python-pyxdg
-BuildRequires:  python-websocket-client
+BuildRequires:  python3dist(pyxdg)
+BuildRequires:  python3dist(websocket-client)
 BuildRequires:  python3dist(requests)
 BuildRequires:  pkgconfig(gtk+-3.0)
 
