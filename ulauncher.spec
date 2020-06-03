@@ -13,7 +13,7 @@ BuildRequires:  intltool
 BuildRequires:  pkgconfig(keybinder-3.0)
 BuildRequires:  pkgconfig(dbus-python)
 BuildRequires:  pkgconfig(python)
-#BuildRequires:  python3dist(python-distutils-extra)
+BuildRequires:  python3dist(python-distutils-extra)
 BuildRequires:  pkgconfig(pygobject-3.0)
 BuildRequires:  python3dist(pyinotify)
 BuildRequires:  python3dist(python-levenshtein)
