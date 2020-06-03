@@ -33,8 +33,6 @@ Requires:       python-Levenshtein
 Requires:       python-pyxdg
 Requires:       python-websocket-client
 
-Recommends:     %{lib}appindicator3_1
-
 %description
 Ulauncher is a fast application launcher for Linux. It's is written in Python,
 using GTK+.
