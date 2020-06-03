@@ -24,16 +24,16 @@ BuildRequires:  pkgconfig(gtk+-3.0)
 
 Requires:       hicolor-icon-theme
 Requires:       keybinder3.0
-Requires:       webkitgtk4
+Requires:       webkit
 Requires:       python-cairo
 Requires:       python-dbus
 Requires:       python-gobject
-Requires:       python-inotify
+Requires:       python-pyinotify
 Requires:       python-Levenshtein
 Requires:       python-pyxdg
 Requires:       python-websocket-client
 
-Recommends:     libappindicator-gtk3
+Recommends:     %{lib}appindicator3_1
 
 %description
 Ulauncher is a fast application launcher for Linux. It's is written in Python,
