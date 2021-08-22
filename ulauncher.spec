@@ -7,7 +7,7 @@ BuildArch:      noarch
 License:        GPLv3+
 URL:            https://github.com/Ulauncher/Ulauncher
 Source0:        https://github.com/Ulauncher/Ulauncher/releases/download/%{version}/%{name}_%{version}.tar.gz
-Patch0:         ulauncher-5.9.0-fix-usr-bin-sh-openmandriva.patch
+#Patch0:         ulauncher-5.9.0-fix-usr-bin-sh-openmandriva.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
