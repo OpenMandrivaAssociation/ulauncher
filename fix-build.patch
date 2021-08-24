@@ -1,0 +1,9 @@
+diff -uraN ulauncher/setup.py omv-ulauncher/setup.py
+--- ulauncher/setup.py	2021-08-24 14:54:34.000000000 +0200
++++ omv-ulauncher/setup.py	2021-08-24 16:54:14.283712228 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/env python3
+ # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
+ 
+ import os
