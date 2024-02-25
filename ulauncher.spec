@@ -45,23 +45,13 @@ Ulauncher is a fast application launcher for Linux. It's is written in Python,
 using GTK+.
 
 %prep
-%autosetup -n %{name} -p1
-sed -i "s|version='%%VERSION%'|version='%{version}'|g" setup.py
+%autosetup -p1 -n %{name}
 
 %build
 %py_build
 
 %install
-
-# https://github.com/Ulauncher/Ulauncher/issues/521
-install -m 0644 -Dp build/share/applications/ulauncher.desktop \
-	%{buildroot}%{_datadir}/applications/%{name}.desktop
-
 %py_install
-
-# systemd
-install -dm 0755 %{buildroot}%{_userunitdir}
-install -pm 0644 %{name}.service %{buildroot}%{_userunitdir}
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
