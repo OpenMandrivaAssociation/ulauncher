@@ -1,6 +1,9 @@
+# don't require because it uses Ayatana Appindicator
+%global __requires_exclude  ^typelib\\(AppIndicator3\\).*$
+
 Name:           ulauncher
-Version:        5.14.1
-Release:        2
+Version:        5.15.6
+Release:        1
 Summary:        Linux Application Launcher
 BuildArch:      noarch
 
@@ -53,10 +56,12 @@ install -m 0644 -Dp build/share/applications/ulauncher.desktop \
 
 %py_install
 
+# systemd
+install -dm 0755 %{buildroot}%{_userunitdir}
+install -pm 0644 %{name}.service %{buildroot}%{_userunitdir}
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
-
 
 %files
 %license LICENSE
@@ -77,5 +82,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}-indicator.svg
 %{_datadir}/icons/hicolor/*/apps/%{name}.svg
 %{_datadir}/icons/ubuntu-mono-*/scalable/apps/%{name}-indicator.svg
+%{_userunitdir}/%{name}.service
 %{python_sitelib}/%{name}-*-py*.egg-info
 %{python_sitelib}/%{name}/
+
