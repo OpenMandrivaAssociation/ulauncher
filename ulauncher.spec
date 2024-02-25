@@ -19,6 +19,10 @@ BuildRequires:	pkgconfig(dbus-python)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(pygobject-3.0)
 BuildRequires:	pkgconfig(python)
+BuildRequires:	webkit4
+BuildRequires:	python%{pyver}dist(dbus-python)
+BuildRequires:	python%{pyver}dist(pycairo)
+BuildRequires:	python%{pyver}dist(pygobject)
 BuildRequires:	python%{pyver}dist(dbus-python)
 BuildRequires:	python%{pyver}dist(requests)
 BuildRequires:	python%{pyver}dist(python-distutils-extra)
@@ -26,6 +30,7 @@ BuildRequires:	python%{pyver}dist(pyinotify)
 BuildRequires:	python%{pyver}dist(python-levenshtein)
 BuildRequires:	python%{pyver}dist(pyxdg)
 BuildRequires:	python%{pyver}dist(websocket-client)
+BuildRequires:	gobject-introspection
 BuildRequires:	systemd-rpm-macros
 
 Requires:	hicolor-icon-theme
