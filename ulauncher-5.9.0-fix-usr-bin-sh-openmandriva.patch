@@ -1,9 +1,0 @@
-diff -uraN ulauncher/bin/ulauncher-toggle omv-ulauncher/bin/ulauncher-toggle
---- ulauncher/bin/ulauncher-toggle	2020-11-22 21:08:49.000000000 +0100
-+++ omv-ulauncher/bin/ulauncher-toggle	2020-11-25 17:50:25.502584005 +0100
-@@ -1,4 +1,4 @@
--#!/usr/bin/sh
-+#!/bin/sh
- 
- dbus-send \
-     --session \

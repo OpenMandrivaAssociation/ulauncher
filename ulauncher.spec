@@ -1,16 +1,19 @@
 # don't require because it uses Ayatana Appindicator
 %global __requires_exclude ^typelib\\(AppIndicator3\\).*$
 
+# (2024-02-25) don't require 'typelie(Notify) = 0.8'
+# because lib64notify-gir0.7 still provides version 0.7
+%global __requires_exclude  ^typelib\\(Notify\\) = 0.8$
+
 Name:		ulauncher
 Version:	5.15.6
 Release:	1
 Summary:	Linux Application Launcher
 BuildArch:	noarch
-
+Group:		Graphical desktop/Other
 License:	GPLv3+
 URL:		https://github.com/Ulauncher/Ulauncher
 Source0:	https://github.com/Ulauncher/Ulauncher/releases/download/%{version}/%{name}_%{version}.tar.gz
-#Patch0:	 ulauncher-5.9.0-fix-usr-bin-sh-openmandriva.patch
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
