@@ -1,41 +1,44 @@
 # don't require because it uses Ayatana Appindicator
-%global __requires_exclude  ^typelib\\(AppIndicator3\\).*$
+%global __requires_exclude ^typelib\\(AppIndicator3\\).*$
 
-Name:           ulauncher
-Version:        5.15.6
-Release:        1
-Summary:        Linux Application Launcher
-BuildArch:      noarch
+Name:		ulauncher
+Version:	5.15.6
+Release:	1
+Summary:	Linux Application Launcher
+BuildArch:	noarch
 
-License:        GPLv3+
-URL:            https://github.com/Ulauncher/Ulauncher
-Source0:        https://github.com/Ulauncher/Ulauncher/releases/download/%{version}/%{name}_%{version}.tar.gz
-#Patch0:         ulauncher-5.9.0-fix-usr-bin-sh-openmandriva.patch
+License:	GPLv3+
+URL:		https://github.com/Ulauncher/Ulauncher
+Source0:	https://github.com/Ulauncher/Ulauncher/releases/download/%{version}/%{name}_%{version}.tar.gz
+#Patch0:	 ulauncher-5.9.0-fix-usr-bin-sh-openmandriva.patch
 
-BuildRequires:  desktop-file-utils
-BuildRequires:  intltool
-BuildRequires:  pkgconfig(keybinder-3.0)
-BuildRequires:  pkgconfig(dbus-python)
-BuildRequires:  pkgconfig(python)
-BuildRequires:  python3dist(python-distutils-extra)
-BuildRequires:  pkgconfig(pygobject-3.0)
-BuildRequires:  python3dist(pyinotify)
-BuildRequires:  python3dist(python-levenshtein)
-BuildRequires:  python3dist(pyxdg)
-BuildRequires:  python3dist(websocket-client)
-BuildRequires:  python3dist(requests)
-BuildRequires:  pkgconfig(gtk+-3.0)
+BuildRequires:	desktop-file-utils
+BuildRequires:	intltool
+BuildRequires:	pkgconfig(keybinder-3.0)
+BuildRequires:	pkgconfig(dbus-python)
+BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(pygobject-3.0)
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(dbus-python)
+BuildRequires:	python%{pyver}dist(requests)
+BuildRequires:	python%{pyver}dist(python-distutils-extra)
+BuildRequires:	python%{pyver}dist(pyinotify)
+BuildRequires:	python%{pyver}dist(python-levenshtein)
+BuildRequires:	python%{pyver}dist(pyxdg)
+BuildRequires:	python%{pyver}dist(websocket-client)
+BuildRequires:	systemd-rpm-macros
 
-Requires:       hicolor-icon-theme
-Requires:       keybinder3.0
-Requires:       webkit
-Requires:       python-cairo
-Requires:       python-dbus
-Requires:       python-gobject
-Requires:       python-pyinotify
-Requires:       python-Levenshtein
-Requires:       python-pyxdg
-Requires:       python-websocket-client
+Requires:	hicolor-icon-theme
+Requires:	keybinder3.0
+Requires:	webkit
+Requires:	python-cairo
+Requires:	python-dbus
+Requires:	python-gobject
+Requires:	python-pyinotify
+Requires:	python-Levenshtein
+Requires:	python-pyxdg
+Requires:	python-websocket-client
+Requires:	wmctrl
 
 %description
 Ulauncher is a fast application launcher for Linux. It's is written in Python,
@@ -52,7 +55,7 @@ sed -i "s|version='%%VERSION%'|version='%{version}'|g" setup.py
 
 # https://github.com/Ulauncher/Ulauncher/issues/521
 install -m 0644 -Dp build/share/applications/ulauncher.desktop \
-    %{buildroot}%{_datadir}/applications/%{name}.desktop
+	%{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %py_install
 
