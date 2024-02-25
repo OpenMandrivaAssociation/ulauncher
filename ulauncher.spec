@@ -43,7 +43,7 @@ Requires:	python-pyinotify
 Requires:	python-Levenshtein
 Requires:	python-pyxdg
 Requires:	python-websocket-client
-Requires:	wmctrl
+#Requires:	wmctrl
 
 %description
 Ulauncher is a fast application launcher for Linux. It's is written in Python,
