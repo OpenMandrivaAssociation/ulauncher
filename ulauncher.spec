@@ -6,7 +6,7 @@
 %global __requires_exclude  ^typelib\\(Notify\\) = 0.8$
 
 Name:		ulauncher
-Version:	5.15.6
+Version:	5.15.7
 Release:	1
 Summary:	Linux Application Launcher
 BuildArch:	noarch
@@ -22,7 +22,7 @@ BuildRequires:	pkgconfig(dbus-python)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(pygobject-3.0)
 BuildRequires:	pkgconfig(python)
-BuildRequires:	webkit4
+BuildRequires:	pkgconfig(webkit2gtk-4.1)
 BuildRequires:	python%{pyver}dist(dbus-python)
 BuildRequires:	python%{pyver}dist(pycairo)
 BuildRequires:	python%{pyver}dist(pygobject)
