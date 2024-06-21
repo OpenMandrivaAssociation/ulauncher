@@ -7,7 +7,7 @@
 
 Name:		ulauncher
 Version:	5.15.7
-Release:	1
+Release:	2
 Summary:	Linux Application Launcher
 BuildArch:	noarch
 Group:		Graphical desktop/Other
