@@ -6,15 +6,15 @@
 %global __requires_exclude  ^typelib\\(Notify\\) = 0.8$
 
 Name:		ulauncher
-Version:	5.15.7
-Release:	3
+Version:	5.15.15
+Release:	1
 Summary:	Linux Application Launcher
 BuildArch:	noarch
 Group:		Graphical desktop/Other
 License:	GPLv3+
 URL:		https://github.com/Ulauncher/Ulauncher
 Source0:	https://github.com/Ulauncher/Ulauncher/releases/download/%{version}/%{name}_%{version}.tar.gz
-Patch0:		ulauncher-5.15.7-webkit_version.patch
+# dropped (no longer applies): Patch0:		ulauncher-5.15.15-webkit_version.patch
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(keybinder-3.0)
@@ -53,7 +53,7 @@ Ulauncher is a fast application launcher for Linux. It's is written in Python,
 using GTK+.
 
 %prep
-%autosetup -p1 -n %{name}
+%autosetup -p1 -n ulauncher
 
 %build
 %py_build
