@@ -43,7 +43,7 @@ Requires:	python-cairo
 Requires:	python-dbus
 Requires:	python-gobject
 Requires:	python-pyinotify
-Requires:	python-Levenshtein
+Requires:	python-levenshtein
 Requires:	python-pyxdg
 Requires:	python-websocket-client
 #Requires:	wmctrl
